@@ -18,7 +18,7 @@ function slotSearch() {
   for(var i = 0; i < form.length; i++) {
     // Handle date params later
     if (form.elements[i].name.startsWith('date-')) { continue; }
-    slotParams[form.elements[i].name.toISOString()] = form.elements[i].value;
+    slotParams[form.elements[i].name] = form.elements[i].value.toISOString();
   }
   // Appointment start date and appointment end date need to both be set in query parameter 'start'
   slotParams['start'] = {$ge: form.elements['date-start'].value, $lt: form.elements['date-end'].value};
