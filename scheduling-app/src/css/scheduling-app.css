@@ -11,7 +11,7 @@
 }
 
 #appointment-holder-row {
-  display: block;
+  display: none;
 }
 
 #patient-errors-row {
