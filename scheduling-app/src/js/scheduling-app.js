@@ -68,7 +68,7 @@ function slotHTML(id, type, start, end) {
              "<p class='card-text'>Start: " + prettyStart + '</p>' +
              "<p class='card-text'>End: " + prettyEnd + '</p>' +
              "<a href='javascript:void(0);' class='card-link' onclick='askForPatient(\"" +
-               slotReference + '", "' + type + '", "' + prettyStart + '", "' + prettyEnd + "\");'>Book</a>" +
+               slotReference + '", "' + type + '", "' + start + '", "' + end + "\");'>Book</a>" +
            '</div>' +
          '</div>';
 }
@@ -149,8 +149,8 @@ function appointmentJSON(slotReference, patientReference) {
       },
       {
         actor: {
-          reference: Location/21304876,
-          display: 'Appointment Location' 
+          reference: 'Location/21304876',
+          display: 'MX Clinic 1' 
         },
         status: 'needs-action'
       }
