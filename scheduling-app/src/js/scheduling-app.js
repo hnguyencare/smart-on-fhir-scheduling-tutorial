@@ -34,7 +34,7 @@ function slotSearch() {
           var slotsHTML = '';
 
           slots.forEach(function(slot) {
-            slotsHTML = slotsHTML + slotHTML(slot.id, slot.type.text, slot.start, slot.end);
+            slotsHTML = slotsHTML + slotHTML(slot.id, slot.text, slot.start, slot.end);
           });
 
           renderSlots(slotsHTML);
