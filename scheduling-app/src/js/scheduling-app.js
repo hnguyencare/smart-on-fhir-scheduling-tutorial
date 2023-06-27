@@ -124,6 +124,16 @@ function appointmentCreate(slotReference, patientReference) {
 function appointmentJSON(slotReference, patientReference) {
   return {
     resourceType: 'Appointment',
+    serviceType: [
+      {
+        coding: [
+          {
+            code: '408443003',
+            system: 'http://snomed.info/sct'
+          }
+        ]
+      }
+    ],
     slot: [
       {
         reference: slotReference
@@ -134,7 +144,21 @@ function appointmentJSON(slotReference, patientReference) {
         actor: {
           reference: patientReference
         },
+        
         status: 'needs-action'
+      },
+      {
+        actor: {
+          reference: Location/21304876,
+          display: 'Appointment Location' 
+        },
+        status: 'needs-action'
+      }
+    ],
+    requestedPeriod: [
+      {
+        start: sessionStorage.getItem('start'),
+        end: sessionStorage.getItem('end'),
       }
     ],
     status: 'proposed'
@@ -172,6 +196,9 @@ function askForPatient(slotReference, type, start, end) {
     ', select a Patient.</p>'
   );
   sessionStorage.setItem('slotReference', slotReference);
+  sessionStorage.setItem('start', start);
+  sessionStorage.setItem('end', end);
+
 }
 
 function patientSearch() {
