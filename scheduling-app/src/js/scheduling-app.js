@@ -18,10 +18,10 @@ function slotSearch() {
   for(var i = 0; i < form.length; i++) {
     // Handle date params later
     if (form.elements[i].name.startsWith('date-')) { continue; }
-    slotParams[form.elements[i].name] = form.elements[i].value +'Z';
+    slotParams[form.elements[i].name] = form.elements[i].value;
   }
   // Appointment start date and appointment end date need to both be set in query parameter 'start'
-  slotParams['start'] = {$ge: form.elements['date-start'].value, $lt: form.elements['date-end'].value};
+  slotParams['start'] = {$ge: form.elements['date-start'].value+'Z', $lt: form.elements['date-end'].value+'Z'};
 
   FHIR.oauth2.ready(function(smart) {
     // Query the FHIR server for Slots
