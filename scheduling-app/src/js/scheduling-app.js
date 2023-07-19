@@ -166,7 +166,7 @@ function appointmentJSON(slotReference, patientReference) {
         end: sessionStorage.getItem('end'),
       }
     ],
-    status: 'proposed'
+    status: 'booked'
   };
 }
 
