@@ -62,6 +62,9 @@ function slotHTML(id, type, start, end) {
       prettyStart = new Date(start),
       prettyEnd = new Date(end);
 
+  sessionStorage.setItem('slotReference', slotReference);
+  sessionStorage.setItem('start', prettyStart);
+  sessionStorage.setItem('end', prettyEnd);
   return "<div class='card'>" +
            "<div class='card-body'>" +
              "<h5 class='card-title'>" + type + '</h5>' +
@@ -77,7 +80,7 @@ function renderSlots(slotsHTML) {
   clearUI();
   $('#slots').html(slotsHTML);
   $('#slots-holder-row').show();
-}
+}gi
 
 function clearUI() {
   $('#errors').html('');
@@ -128,8 +131,8 @@ function appointmentJSON(slotReference, patientReference) {
       {
         coding: [
           {
-            code: '408443003',
-            system: 'http://snomed.info/sct'
+            code: '2572307911',
+            system: 'https://fhir.cerner.com/ec2458f2-1e24-41c8-b71b-0e701af7583d/codeSet/14249'
           }
         ]
       }
