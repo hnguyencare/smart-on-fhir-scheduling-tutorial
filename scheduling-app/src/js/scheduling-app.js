@@ -149,7 +149,7 @@ function appointmentJSON(slotReference, patientReference) {
           reference: patientReference
         },
         
-        status: 'needs-action'
+        status: 'accepted'
       },
       {
         actor: {
@@ -157,7 +157,7 @@ function appointmentJSON(slotReference, patientReference) {
           display: 'MX Clinic 1' 
 
         },
-        status: 'needs-action'
+        status: 'accepted'
       }
     ],
     requestedPeriod: [
