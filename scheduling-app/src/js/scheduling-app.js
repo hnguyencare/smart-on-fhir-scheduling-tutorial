@@ -126,9 +126,6 @@ function appointmentCreate(slotReference, patientReference) {
 
 function appointmentJSON(slotReference, patientReference) {
 
-  var select = document.getElementById('location');
-  var locationSelect = select.value;
-  var textSelect = locationSelect.options[locationSelect.selectedIndex].text;
   return {
     resourceType: 'Appointment',
     serviceType: [
@@ -156,10 +153,8 @@ function appointmentJSON(slotReference, patientReference) {
       },
       {
         actor: {
-          reference: locationSelect,
-          //reference: 'Location/21304876',
-          display: textSelect 
-          //display: 'MX Clinic 1' 
+          reference: 'Location/21304876',
+          display: 'MX Clinic 1' 
 
         },
         status: 'needs-action'
