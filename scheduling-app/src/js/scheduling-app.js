@@ -80,7 +80,7 @@ function renderSlots(slotsHTML) {
   clearUI();
   $('#slots').html(slotsHTML);
   $('#slots-holder-row').show();
-}gi
+}
 
 function clearUI() {
   $('#errors').html('');
