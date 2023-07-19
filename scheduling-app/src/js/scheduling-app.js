@@ -63,8 +63,8 @@ function slotHTML(id, type, start, end) {
       prettyEnd = new Date(end);
 
   sessionStorage.setItem('slotReference', slotReference);
-  sessionStorage.setItem('start', prettyStart);
-  sessionStorage.setItem('end', prettyEnd);
+  sessionStorage.setItem('start', start);
+  sessionStorage.setItem('end', end);
   return "<div class='card'>" +
            "<div class='card-body'>" +
              "<h5 class='card-title'>" + type + '</h5>' +
